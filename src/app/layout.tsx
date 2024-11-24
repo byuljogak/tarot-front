@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
+const flowerIsland = localFont({
+  src: "./fonts/MapoFlowerIsland.ttf",
+  variable: "--font-flower-island",
   weight: "100 900",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
+const kopubBatang = localFont({
+  src: "./fonts/KoPubWorld-Batang-Medium.woff2",
+  variable: "--font-kopub-batang",
   weight: "100 900",
 });
 
@@ -24,11 +24,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ko">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${flowerIsland.variable} ${kopubBatang.variable} antialiased`}
       >
-        {children}
+        <div className="bg-stars-img flex-center full-size">{children}</div>
       </body>
     </html>
   );
