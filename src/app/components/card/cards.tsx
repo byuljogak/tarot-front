@@ -1,7 +1,13 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { Dispatch, SetStateAction, useCallback, useEffect, useRef, useState } from "react";
 import Card from "./card";
 
-export default function Cards() {
+export default function Cards({
+  cardSelected,
+  setCardSelected,
+}: {
+  cardSelected: boolean;
+  setCardSelected: Dispatch<SetStateAction<boolean>>;
+}) {
   const cardCount = 20;
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -11,7 +17,6 @@ export default function Cards() {
   const [scrolled, setScrolled] = useState(false);
   const [startX, setStartX] = useState(0);
   const [startScrollLeft, setStartScrollLeft] = useState(0);
-  const [cardSelected, setCardSelected] = useState(false);
 
   const handleScrollStart = useCallback(() => {
     setScrolling(true);
@@ -74,7 +79,9 @@ export default function Cards() {
           <Card
             key={index}
             onClick={() => {
-              if (!scrolled) setCardSelected(true);
+              if (!scrolled) {
+                setCardSelected(true);
+              }
             }}
             isMini
           />
@@ -83,7 +90,9 @@ export default function Cards() {
       {cardSelected && (
         <div className="flex absolute w-full items-center justify-center">
           <Card
-            onClick={() => setCardSelected(false)}
+            onClick={() => {
+              setCardSelected(false);
+            }}
             width={170}
             height={200}
           />

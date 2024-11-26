@@ -32,6 +32,13 @@ export default {
       boxShadow: {
         'card-mini': '2px 12px 20px 0px #E3FFF840',
         'card': '0px 0px 15px 0px #E3FFF8B2',
+        'custom-button': '0 4px 4px 0 #000000, inset 0 0 15px 0 #E3FFF8',
+      },
+      width: {
+        'result-image-width': '300px',
+      },
+      height: {
+        'result-image-height': '477px',
       },
     },
   },
