@@ -22,12 +22,12 @@ export default {
       },
       keyframes: {
         "card-slide": {
-          "0%, 100%": { transform: "translateX(0)" },
-          "50%": { transform: "translateX(-40%)" },
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(-100%)" },
         },
       },
       animation: {
-        "card-slide": "card-slide 10s linear infinite",
+        "card-slide": "card-slide 1s linear",
       },
       boxShadow: {
         'card-mini': '2px 12px 20px 0px #E3FFF840',

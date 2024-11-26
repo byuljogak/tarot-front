@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 const flowerIsland = localFont({
-  src: "./fonts/MapoFlowerIsland.ttf",
+  src: "./fonts/MapoFlowerIslandA.woff",
   variable: "--font-flower-island",
   weight: "100 900",
 });
