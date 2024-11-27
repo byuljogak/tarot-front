@@ -11,6 +11,9 @@ export default {
     extend: {
       backgroundImage: {
         "stars-img": "url('/stars.webp')",
+        "result-card-img": "url('/result_card.png')",
+        "card-front": "url('/cardx1.png')",
+        "card-back": "url('/cardx1.png')",
       },
       colors: {
         background: "var(--background)",
@@ -20,34 +23,74 @@ export default {
         "flower-island": "var(--font-flower-island)",
         "kopub-batang": "var(--font-kopub-batang)",
       },
-      keyframes: {
-        "card-slide": {
-          "0%": { transform: "translateX(100%)" },
-          "100%": { transform: "translateX(-100%)" },
-        },
-      },
       animation: {
         "card-slide": "card-slide 1s linear",
       },
       boxShadow: {
-        'card-mini': '2px 12px 20px 0px #E3FFF840',
-        'card': '0px 0px 15px 0px #E3FFF8B2',
-        'custom-button': '0 4px 4px 0 #000000, inset 0 0 15px 0 #E3FFF8',
+        "card-mini": "2px 12px 20px 0px #E3FFF840",
+        card: "0px 0px 15px 0px #E3FFF8B2",
+        "custom-button": "0 4px 4px 0 #000000, inset 0 0 15px 0 #E3FFF8",
       },
       width: {
-        'result-image-width': '300px',
+        "result-image-width": "300px",
       },
       height: {
-        'result-image-height': '477px',
+        "result-image-height": "477px",
       },
+      keyframes: {},
     },
   },
   // scroll bar hide plugin
   plugins: [
     plugin(({ addUtilities }) => {
       addUtilities({
-        ".text-stroke": {
+        ".card": {
+          display: "block",
+          margin: "0 auto",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "300px",
+          height: "488px",
+          position: "relative",
+          transformStyle: "preserve-3d",
+          perspective: "1000px",
+          cursor: "pointer",
+        },
+        ".card-inner": {
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          position: "absolute",
+          width: "100%",
+          height: "100%",
+          backgroundColor: "black",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+
+          //bold red
+          color: "red",
+          fontSize: "20px",
+          fontWeight: "bold",
+        },
+        ".card-inner-front": {
+          backgroundImage: "url('/cardx1.png')",
+          backfaceVisibility: "hidden",
+        },
+        ".card-inner-back": {
+          backgroundImage: "url('/result_card.png')",
+        },
+        ".text-white-stroke": {
           textShadow: "0 0 0.4px #FFFFFF, 0 0 0.4px #FFFFFF, 0 0 0.4px #FFFFFF",
+        },
+        ".text-white-bold-stroke": {
+          textShadow: "0 0 1px #FFFFFF, 0 0 1px #FFFFFF, 0 0 1px #FFFFFF",
+        },
+        ".text-cyan-stroke": {
+          textShadow: "0 0 0.4px #D2F9FF, 0 0 0.4px #D2F9FF, 0 0 0.4px #D2F9FF",
+        },
+        ".text-gray-stroke": {
+          textShadow: "0 0 0.4px #EBEBEB, 0 0 0.4px #EBEBEB, 0 0 0.4px #EBEBEB",
         },
         ".full-size": {
           width: "100%",

@@ -1,9 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { api } from "../api/fetch";
-import Image from "next/image";
-import Button from "../components/button";
+import { api } from "../../api/fetch";
+import Button from "../../components/button";
+import Link from "next/link";
 
 export default function Page() {
   const [keywords, setKeywords] = useState<string[]>([]);
@@ -11,15 +11,10 @@ export default function Page() {
 
   const loadTarot = useCallback(async () => {
     const response = await api.tarot.execute();
-    console.log(response);
     if (response.ok && response.body) {
       setKeywords(response.body.keywords);
       setDescription(response.body.description);
     }
-    //setKeywords(["keyword1", "keyword2", "keyword3"]);
-    //setDescription(
-    //  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    //);
   }, []);
 
   useEffect(() => {
@@ -27,32 +22,34 @@ export default function Page() {
   }, [loadTarot]);
 
   return (
-    <div className="grid grid-rows-[1fr_auto_1fr] full-size min-h-screen items-center justify-items-center font-flower-island text-lg">
+    <div className="grid grid-rows-[1fr_auto_1fr] full-size min-h-screen items-center justify-items-center font-flower-island text-[#EBEBEB] text-base">
       <div></div>
-      <div className="relative flex-center w-result-image-width h-result-image-height">
-        <div className="flex-center flex-col absolute z-10 gap-7">
+      <div className="flex-center flex-col bg-result-card-img bg-black bg-cover bg-center bg-no-repeat w-result-image-width h-result-image-height px-6 py-12">
+        <div className="uppercase text-[#A3F2FF] text-white-bold-stroke text-xl">
+          result
+        </div>
+        <div className="w-5 border-l-2 border-white rotate-90"></div>
+        <div className="flex flex-col w-full overflow-y-hidden gap-7">
           <div className="flex flex-col flex-center">
-            <div>Keywords</div>
-            <ul className="flex flex-row [&>li+li]:before:content-[',']">
+            <div className="text-[#D2F9FF] text-cyan-stroke text-lg capitalize">
+              keywords
+            </div>
+            <ul className="flex flex-row [&>li+li]:before:content-[','] text-gray-stroke">
               {keywords.map((keyword, index) => (
                 <li key={index}>{keyword}</li>
               ))}
             </ul>
           </div>
-          <p
-            className="flex-center w-full overflow-x-clip overflow-y-scroll scrollbar-hide 
-            whitespace-break-spaces text-center text-white h-result-description-height
-            "
-          >
-            {description}
-          </p>
+          <div className="flex-center flex-col w-full overflow-y-hidden">
+            <div className="text-[#D2F9FF] text-cyan-stroke text-lg capitalize">
+              advices
+            </div>
+            <p className="flex flex-col gap-3 w-full overflow-x-clip overflow-y-scroll whitespace-break-spaces text-center text-white h-result-description-height text-white-stroke">
+              {description}
+              <Link href={"/"}>돌아가기</Link>
+            </p>
+          </div>
         </div>
-        <Image
-          className="bg-black absolute"
-          src={"/result_card.png"}
-          layout="fill"
-          alt=""
-        />
       </div>
       <Button>SHARE</Button>
     </div>

@@ -8,7 +8,7 @@ const flowerIsland = localFont({
   weight: "100 900",
 });
 const kopubBatang = localFont({
-  src: "./fonts/KoPubWorld-Batang-Medium.woff2",
+  src: "./fonts/KoPubWorld-Batang-Medium.woff",
   variable: "--font-kopub-batang",
   weight: "100 900",
 });
