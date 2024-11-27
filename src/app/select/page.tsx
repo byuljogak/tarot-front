@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Cards from "../components/card/cards";
-import Button from "../components/button";
-import Message from "../components/message";
+import Cards from "../../components/card/cards";
+import Button from "../../components/button";
+import Message from "../../components/message";
 
 export default function Page() {
   const [cardSelected, setCardSelected] = useState(false);
