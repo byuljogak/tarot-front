@@ -35,13 +35,28 @@ export default {
         "result-image-height": "477px",
       },
       keyframes: {
-        "card-slide": {
-          "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-150px)" },
+        "card-scale": {
+          "0%": { transform: "scale(0)" },
+          "70%": { transform: "scale(1.1)" },
+          "100%": { transform: "scale(1)" },
+        },
+        "fade-in": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        "fade-out": {
+          "0%": { opacity: "1" },
+          "100%": { opacity: "0" },
+        },
+        "offset-distance-move": {
+          "0%": { offsetDistance: "0%" },
+          "100%": { offsetDistance: "100%" },
         },
       },
       animation: {
-        "card-slide": "card-slide 1s linear infinite",
+        "card-scale": "card-scale 1s ease-in-out",
+        "fade-in": "fade-in 1s",
+        "fade-out": "fade-out 1s",
       },
     },
   },

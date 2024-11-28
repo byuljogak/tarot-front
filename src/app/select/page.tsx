@@ -8,6 +8,7 @@ import Card from "@/components/card/card";
 export default function Page() {
   const cardCount = 21;
   const animationDelay = 100;
+
   const [cardSelected, setCardSelected] = useState(false);
   const [animation, setAnimation] = useState(false);
 
@@ -188,14 +189,15 @@ export default function Page() {
           <Message message="화면을 눌러 카드를 선택을 시작해주세요." />
         )}
       </div>
+
       <div
         className="flex flex-row h-full flex-center gap-5 py-5"
         ref={cardsRef}
       >
         {Array.from({ length: (cardCount - 2) / 2 }).map((_, index) => (
-          <Card key={index} width={120} isMini />
+          <Card key={index} width={120} isMini scaleAnimation />
         ))}
-        <Card ref={prevCardRef} width={120} isMini />
+        <Card ref={prevCardRef} width={120} isMini scaleAnimation />
         <Card
           ref={currentCardRef}
           width={120}
@@ -203,10 +205,11 @@ export default function Page() {
             transform: cardSelected ? "scale(1.2)" : "scale(1)",
           }}
           isMini
+          scaleAnimation
         />
-        <Card ref={nextCardRef} width={120} isMini />
+        <Card ref={nextCardRef} width={120} isMini scaleAnimation />
         {Array.from({ length: (cardCount - 2) / 2 }).map((_, index) => (
-          <Card key={index} width={120} isMini />
+          <Card key={index} width={120} isMini scaleAnimation />
         ))}
       </div>
       <div className="w-full">
