@@ -9,7 +9,15 @@ import Message from "@/components/message";
 export default function Page() {
   const executeTarotQuery = useQuery(tarotQuery.execute);
 
-  if (executeTarotQuery.isFetched) {
+  if (executeTarotQuery.isError) {
+    return (
+      <div className="flex-center full-size">
+        <Message message="운명을 해석하는 도중 오류가 발생했습니다." />
+      </div>
+    );
+  }
+
+  if (executeTarotQuery.isSuccess) {
     return (
       <div className="grid grid-rows-[1fr_auto_1fr] full-size items-center justify-items-center font-flower-island text-[#EBEBEB] text-base">
         <div></div>

@@ -2,6 +2,9 @@ import { queryOptions } from "@tanstack/react-query";
 import { api } from "./fetch";
 import { QueryError } from "@/interfaces/api";
 
+const normalRetryCount = 2;
+const normalStaleTime = 1000 * 60 * 10;
+
 const execute = queryOptions<
   Awaited<ReturnType<typeof api.tarot.execute>>["body"],
   QueryError
@@ -18,6 +21,8 @@ const execute = queryOptions<
       });
     }
   },
+  retry: normalRetryCount,
+  staleTime: normalStaleTime,
 });
 
 export const tarotQuery = {
