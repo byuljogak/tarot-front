@@ -28,7 +28,7 @@ export default function RootLayout({
       <body
         className={`${flowerIsland.variable} ${kopubBatang.variable} antialiased`}
       >
-        <div className="bg-stars-img flex-center full-size">{children}</div>
+        <div className="bg-stars-img flex-center min-h-screen">{children}</div>
       </body>
     </html>
   );
