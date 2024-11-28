@@ -11,7 +11,7 @@ export default function Page() {
 
   if (executeTarotQuery.isError) {
     return (
-      <div className="flex-center full-size">
+      <div className="flex-center full-size animate-fade-in">
         <Message message="운명을 해석하는 도중 오류가 발생했습니다." />
       </div>
     );
@@ -21,7 +21,7 @@ export default function Page() {
     return (
       <div className="grid grid-rows-[1fr_auto_1fr] full-size items-center justify-items-center font-flower-island text-[#EBEBEB] text-base">
         <div></div>
-        <div className="flex-center flex-col bg-result-card-img bg-black bg-cover bg-center bg-no-repeat w-result-image-width h-result-image-height px-6 py-12">
+        <div className="flex-center flex-col bg-result-card-img bg-black bg-cover bg-center bg-no-repeat w-result-image-width h-result-image-height px-6 py-12 animate-fade-in">
           <div className="uppercase text-[#A3F2FF] text-white-bold-stroke text-xl">
             result
           </div>
@@ -31,7 +31,7 @@ export default function Page() {
               <div className="text-[#D2F9FF] text-cyan-stroke text-lg capitalize">
                 keywords
               </div>
-              <ul className="flex flex-row [&>li+li]:before:content-[','] text-gray-stroke">
+              <ul className="flex flex-row text-gray-stroke [&>li+li]:before:content-[','] [&>li+li]:before:mr-1">
                 {executeTarotQuery.data?.keywords.map((keyword, index) => (
                   <li key={index}>{keyword}</li>
                 ))}
@@ -43,7 +43,9 @@ export default function Page() {
               </div>
               <p className="flex flex-col gap-3 w-full overflow-x-clip overflow-y-scroll whitespace-break-spaces text-center text-white h-result-description-height text-white-stroke">
                 {executeTarotQuery.data?.description}
-                <Link href={"/"}>돌아가기</Link>
+                <Link href={"/"} className="underline underline-offset-4">
+                  돌아가기
+                </Link>
               </p>
             </div>
           </div>
@@ -54,7 +56,7 @@ export default function Page() {
   }
 
   return (
-    <div className="flex-center full-size">
+    <div className="flex-center full-size animate-pulse">
       <Message message="당신의 운명을 해석중입니다..." />
     </div>
   );

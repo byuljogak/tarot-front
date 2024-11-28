@@ -1,6 +1,20 @@
-export default function Message({ message }: { message: string }) {
+import { memo, useRef } from "react";
+
+export default memo(function Message({
+  message,
+  visible = true,
+}: {
+  message: string;
+  visible?: boolean;
+}) {
+  const messageRef = useRef<HTMLDivElement>(null);
+
   return (
-    <div className="font-flower-island text-lg sm:text-xl px-4 text-white-stroke">
+    <div
+      ref={messageRef}
+      style={{ display: visible ? "block" : "none" }}
+      className="font-flower-island text-lg sm:text-xl px-4 text-white-stroke animate-fade-in"
+    >
       {message.split("\\n").map((line, index) => (
         <p key={index} className="text-center">
           {line}
@@ -8,4 +22,4 @@ export default function Message({ message }: { message: string }) {
       ))}
     </div>
   );
-}
+});

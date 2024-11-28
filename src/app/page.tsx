@@ -22,10 +22,16 @@ export default function Home() {
       onClick={
         messageIndex < messages.length ? nextMessage : redirect("/select")
       }
-      className="grid grid-rows-[20px_1fr_20px] full-size items-center justify-items-center pt-20 pb-20 gap-16 font-flower-island"
+      className="grid grid-rows-[20px_1fr_20px] full-size items-center justify-items-center pt-20 pb-20 gap-16 min-h-screen font-flower-island"
     >
       <main className="flex flex-col w-full gap-8 row-start-2 items-center">
-        <Message message={messages[messageIndex]} />
+        {messages.map((message, index) => (
+          <Message
+            key={index}
+            message={message}
+            visible={messageIndex === index}
+          />
+        ))}
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center"></footer>
     </div>
