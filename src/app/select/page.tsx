@@ -21,7 +21,7 @@ export default function Page() {
         { transform: "scale(1.2)" },
       ];
       const options = {
-        duration: 1000,
+        duration: 500,
         easing: "ease-in-out",
       };
       setAnimation(true);
@@ -41,7 +41,7 @@ export default function Page() {
         { transform: "scale(1)" },
       ];
       const options = {
-        duration: 1000,
+        duration: 500,
         easing: "ease-in-out",
       };
       setAnimation(true);
@@ -69,7 +69,7 @@ export default function Page() {
         { transform: cardSelected ? "scale(1.2)" : "cale(1)" },
       ];
       const options = {
-        duration: 1000,
+        duration: 500,
         easing: "ease-in-out",
       };
       setAnimation(true);
