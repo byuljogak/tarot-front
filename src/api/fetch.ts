@@ -41,6 +41,8 @@ export const api = {
   tarot: {
     execute: async () => {
       if (process.env.NODE_ENV === "development") {
+        // wait for 1 second to simulate network delay
+        await new Promise((resolve) => setTimeout(resolve, 1000));
         return {
           ok: true,
           status: 200,
