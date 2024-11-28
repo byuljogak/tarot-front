@@ -31,7 +31,7 @@ export default function Page() {
               <div className="text-[#D2F9FF] text-cyan-stroke text-lg capitalize">
                 keywords
               </div>
-              <ul className="flex flex-row [&>li+li]:before:content-[','] text-gray-stroke">
+              <ul className="flex flex-row text-gray-stroke [&>li+li]:before:content-[','] [&>li+li]:before:mr-1">
                 {executeTarotQuery.data?.keywords.map((keyword, index) => (
                   <li key={index}>{keyword}</li>
                 ))}
@@ -43,7 +43,7 @@ export default function Page() {
               </div>
               <p className="flex flex-col gap-3 w-full overflow-x-clip overflow-y-scroll whitespace-break-spaces text-center text-white h-result-description-height text-white-stroke">
                 {executeTarotQuery.data?.description}
-                <Link href={"/"}>돌아가기</Link>
+                <Link href={"/"} className="underline underline-offset-4">돌아가기</Link>
               </p>
             </div>
           </div>
