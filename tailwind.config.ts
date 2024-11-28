@@ -23,9 +23,6 @@ export default {
         "flower-island": "var(--font-flower-island)",
         "kopub-batang": "var(--font-kopub-batang)",
       },
-      animation: {
-        "card-slide": "card-slide 1s linear",
-      },
       boxShadow: {
         "card-mini": "2px 12px 20px 0px #E3FFF840",
         card: "0px 0px 15px 0px #E3FFF8B2",
@@ -37,7 +34,15 @@ export default {
       height: {
         "result-image-height": "477px",
       },
-      keyframes: {},
+      keyframes: {
+        "card-slide": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-150px)" },
+        },
+      },
+      animation: {
+        "card-slide": "card-slide 1s linear infinite",
+      },
     },
   },
   // scroll bar hide plugin

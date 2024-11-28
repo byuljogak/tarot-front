@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { MouseEventHandler } from "react";
 
 export default function Button({
   href,
@@ -6,7 +7,7 @@ export default function Button({
   children,
 }: {
   href?: string;
-  onClick?: () => void;
+  onClick?: MouseEventHandler<HTMLDivElement> | undefined;
   children: React.ReactNode;
 }) {
   return (

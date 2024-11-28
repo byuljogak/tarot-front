@@ -104,7 +104,6 @@ export default function Cards({
             setCardSelected(false);
           }}
           width={170}
-          height={200}
         />
       </div>
     </div>

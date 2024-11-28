@@ -22,7 +22,7 @@ export default function Page() {
   }, [loadTarot]);
 
   return (
-    <div className="grid grid-rows-[1fr_auto_1fr] full-size min-h-screen items-center justify-items-center font-flower-island text-[#EBEBEB] text-base">
+    <div className="grid grid-rows-[1fr_auto_1fr] full-size items-center justify-items-center font-flower-island text-[#EBEBEB] text-base">
       <div></div>
       <div className="flex-center flex-col bg-result-card-img bg-black bg-cover bg-center bg-no-repeat w-result-image-width h-result-image-height px-6 py-12">
         <div className="uppercase text-[#A3F2FF] text-white-bold-stroke text-xl">
