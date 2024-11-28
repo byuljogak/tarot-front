@@ -165,7 +165,7 @@ export default function Page() {
 
   return (
     <div
-      className="grid grid-rows-[1fr_4fr_1fr] items-center w-full pt-20 pb-20 gap-16 font-flower-island overflow-x-hidden min-h-screen select-none"
+      className="grid grid-rows-[1fr_2fr_1fr] items-center w-full pt-20 pb-20 gap-16 font-flower-island overflow-x-hidden min-h-screen select-none"
       onClick={(e) => {
         // prevent multiple clicks
         if (!animation && !cardSelected) {

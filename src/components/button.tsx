@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { MouseEventHandler } from "react";
+import { memo, MouseEventHandler } from "react";
 
-export default function Button({
+export default memo(function Button({
   href,
   onClick,
   children,
@@ -24,4 +24,4 @@ export default function Button({
       )}
     </div>
   );
-}
+});
