@@ -19,18 +19,15 @@ export default function Page() {
 
   if (executeTarotQuery.isSuccess) {
     return (
-      <div className="grid grid-rows-[1fr_auto_1fr] full-size items-center justify-items-center font-flower-island text-[#EBEBEB] text-base">
+      <div className="grid grid-rows-[1fr_auto_1fr] full-size items-center justify-items-center font-kopub-batang text-[#EBEBEB] text-base">
         <div></div>
-        <div className="flex-center flex-col bg-result-card-img bg-black bg-cover bg-center bg-no-repeat w-result-image-width h-result-image-height px-6 py-12 animate-fade-in">
-          <div className="uppercase text-[#A3F2FF] text-white-bold-stroke text-xl">
-            {executeTarotQuery.data?.data.title}
+        <div className="flex-center flex-col bg-result-card-img bg-cover bg-center bg-no-repeat w-result-image-width h-result-image-height px-6 py-12 animate-fade-in">
+          <div className="uppercase text-[#A3F2FF] text-white-bold-stroke text-xl font-flower-island">
+            {executeTarotQuery.data?.data.title} ({executeTarotQuery.data?.data.titleKR})
           </div>
-          <div className="uppercase text-[#A3F2FF] text-white-bold-stroke text-xl">
-            {executeTarotQuery.data?.data.titleKR}
-          </div>
-          <div className="w-5 border-l-2 border-white rotate-90"></div>
+          <div className="h-7 border-l border-white my-1"></div>
           <div className="flex flex-col w-full overflow-y-hidden gap-7">
-            <div className="flex flex-col flex-center">
+            <div className="flex flex-col flex-center gap-1">
               <div className="text-[#D2F9FF] text-cyan-stroke text-lg capitalize">
                 keywords
               </div>
@@ -40,7 +37,7 @@ export default function Page() {
                 ))}
               </ul>
             </div>
-            <div className="flex-center flex-col w-full overflow-y-hidden">
+            <div className="flex-center flex-col w-full overflow-y-hidden gap-1">
               <div className="text-[#D2F9FF] text-cyan-stroke text-lg capitalize">
                 advices
               </div>
