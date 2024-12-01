@@ -23,7 +23,10 @@ export default function Page() {
         <div></div>
         <div className="flex-center flex-col bg-result-card-img bg-black bg-cover bg-center bg-no-repeat w-result-image-width h-result-image-height px-6 py-12 animate-fade-in">
           <div className="uppercase text-[#A3F2FF] text-white-bold-stroke text-xl">
-            result
+            {executeTarotQuery.data?.data.title}
+          </div>
+          <div className="uppercase text-[#A3F2FF] text-white-bold-stroke text-xl">
+            {executeTarotQuery.data?.data.titleKR}
           </div>
           <div className="w-5 border-l-2 border-white rotate-90"></div>
           <div className="flex flex-col w-full overflow-y-hidden gap-7">
@@ -32,7 +35,7 @@ export default function Page() {
                 keywords
               </div>
               <ul className="flex flex-row text-gray-stroke [&>li+li]:before:content-[','] [&>li+li]:before:mr-1">
-                {executeTarotQuery.data?.keywords.map((keyword, index) => (
+                {executeTarotQuery.data?.data.keywords.map((keyword, index) => (
                   <li key={index}>{keyword}</li>
                 ))}
               </ul>
@@ -42,7 +45,7 @@ export default function Page() {
                 advices
               </div>
               <p className="flex flex-col gap-3 w-full overflow-x-clip overflow-y-scroll whitespace-break-spaces text-center text-white h-result-description-height text-white-stroke">
-                {executeTarotQuery.data?.description}
+                {executeTarotQuery.data?.data.advice}
                 <Link href={"/"} className="underline underline-offset-4">
                   돌아가기
                 </Link>
