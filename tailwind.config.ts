@@ -29,10 +29,10 @@ export default {
         "custom-button": "0 4px 4px 0 #000000, inset 0 0 15px 0 #E3FFF8",
       },
       width: {
-        "result-image-width": "300px",
+        "result-card-width": "300px",
       },
       height: {
-        "result-image-height": "477px",
+        "result-card-height": "477px",
       },
       keyframes: {
         "card-scale": {
