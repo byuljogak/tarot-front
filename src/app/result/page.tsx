@@ -32,7 +32,7 @@ export default function Page() {
               <div className="text-[#D2F9FF] text-cyan-stroke text-lg capitalize">
                 keywords
               </div>
-              <ul className="flex flex-row w-full text-gray-stroke whitespace-normal text-center">
+              <ul className="flex flex-row flex-center w-full text-gray-stroke whitespace-normal text-center">
                 {executeTarotQuery.data?.data.keywords.join(", ")}
               </ul>
             </div>
