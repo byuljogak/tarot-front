@@ -22,7 +22,7 @@ export default function Page() {
       <div className="grid grid-rows-[1fr_auto_1fr] full-size items-center justify-items-center font-kopub-batang text-[#EBEBEB] text-base">
         <div></div>
         <div className="flex-center flex-col bg-result-card-img bg-cover bg-center bg-no-repeat w-result-card-width h-result-card-height px-6 py-12 animate-fade-in">
-          <div className="uppercase text-[#A3F2FF] text-white-bold-stroke text-xl font-flower-island">
+          <div className="uppercase text-[#A3F2FF] text-white-bold-stroke text-xl font-flower-island text-center">
             {executeTarotQuery.data?.data.title} (
             {executeTarotQuery.data?.data.titleKR})
           </div>
