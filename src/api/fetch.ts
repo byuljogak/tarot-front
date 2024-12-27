@@ -2,7 +2,7 @@ export const baseUrl = process.env.NEXT_PUBLIC_API_BASE;
 
 export const url = {
   tarot: {
-    read: "/card/read",
+    read: "/tarot/read",
   },
 };
 
